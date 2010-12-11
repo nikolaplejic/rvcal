@@ -25,10 +25,16 @@ $(function() {
   	}, 
   	viewDisplay: function() {
   		$("tbody > tr > .fc-state-default").hover(function() {
-		    $(this).css("background", "#999");
+		    $(this).css({ 
+		    	"background": "#999", 
+		    	"cursor": "pointer"
+		    });
 	    }, function() {
 	    	if (this != window.rvcal.current) {
-		      $(this).css("background", "white");
+		      $(this).css({ 
+		    	  "background": "white", 
+		    	  "cursor": "pointer"
+		      });
 		    }
 	    });
   	},
@@ -36,5 +42,6 @@ $(function() {
   	eventSources: [
   		'/rvcal/events/',
   	],
+  	height: 400,
   });
 });
