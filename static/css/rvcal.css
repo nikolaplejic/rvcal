@@ -36,3 +36,7 @@ h2 {
 .footer {
   min-height: 30px;
 }
+
+#entryform {
+  display: none; 
+}

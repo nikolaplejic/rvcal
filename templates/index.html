@@ -9,6 +9,13 @@
 {% endblock %}
 
 {% block main %}
+<div id="entryform">
+  <form method="post" action="{% url shifts.views.index %}">
+    Haker(ica): {{ form.person }}
+    Datum: {{ form.date }}
+    <input type="submit" value="Submit" name="submit" id="submit" />
+  </form>
+</div>
 <div id="calendar"></div>
 {% endblock %}
 

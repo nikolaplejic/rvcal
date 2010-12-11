@@ -6,8 +6,15 @@ $(function() {
 
   $("#calendar").fullCalendar({
   	dayClick: function() {
-  		// day click callback
+  		$("#entryform").slideDown();
   	}, 
+  	viewDisplay: function() {
+  		$(".fc-state-default").hover(function() {
+		    $(this).css("background", "#999");
+	    }, function() {
+		    $(this).css("background", "white");
+	    });
+  	},
   	editable: true, 
   	eventSources: [
   		'/rvcal/events/',
