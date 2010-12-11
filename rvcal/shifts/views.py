@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.utils import simplejson
 from forms import ShiftForm
+from models import Shift
 import datetime
 
 def index(request):
@@ -19,8 +20,9 @@ def index(request):
   return render_to_response(template, context)
 
 def events(request):
-  today = datetime.datetime.now()
-  events = [
-    { 'title': 'Foo', 'start': today.isoformat() }
-  ]
+  events = []
+  shifts = Shift.objects.all()
+  for shift in shifts:
+  	events.append({ 'title': shift.person.username, 'start':
+  	              shift.date.isoformat() })
   return HttpResponse(simplejson.dumps(events), mimetype="text/plain")
