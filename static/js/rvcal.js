@@ -9,7 +9,7 @@ $(function() {
   		$("#entryform").slideDown();
   	}, 
   	viewDisplay: function() {
-  		$(".fc-state-default").hover(function() {
+  		$("tbody > tr > .fc-state-default").hover(function() {
 		    $(this).css("background", "#999");
 	    }, function() {
 		    $(this).css("background", "white");
