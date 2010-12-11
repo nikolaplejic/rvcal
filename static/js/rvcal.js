@@ -6,7 +6,11 @@ $(function() {
 
   $("#calendar").fullCalendar({
   	dayClick: function() {
-  		$("#entryform").slideDown();
+  		if ($("#entryform").css("display") == "none") {
+  		  $("#entryform").slideDown();
+  		} else {
+  		  $("#entryform").slideUp();
+  		}
   	}, 
   	viewDisplay: function() {
   		$("tbody > tr > .fc-state-default").hover(function() {
