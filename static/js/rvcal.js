@@ -25,10 +25,12 @@ $(function() {
   	}, 
   	viewDisplay: function() {
   		$("tbody > tr > .fc-state-default").hover(function() {
-		    $(this).css({ 
-		    	"background": "#999", 
-		    	"cursor": "pointer"
-		    });
+		    if (this != window.rvcal.current) {
+		      $(this).css({ 
+		    	  "background": "#999", 
+		    	  "cursor": "pointer"
+		      });
+		    }
 	    }, function() {
 	    	if (this != window.rvcal.current) {
 		      $(this).css({ 
