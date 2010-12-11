@@ -1,0 +1,36 @@
+
+body {
+  background-color: #f1efe6;
+  color: #333;
+  font: 13px "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight:bold;
+  font-size:20px;
+}
+
+h2 {
+  font-weight:bold;
+  font-size:14px;
+}
+
+.subtitle {
+  font-size: 14px;
+}
+
+.header {
+  min-height: 30px;
+}
+
+.main {
+  min-height: 300px;
+}
+
+.footer {
+  min-height: 30px;
+}
