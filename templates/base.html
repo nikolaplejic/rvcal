@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{%block meta_description%}{%endblock%}" />
+    <meta name="keywords" content="{%block meta_keywords%}{%endblock%}" />
+    <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print" />
+    <!--[if lt IE 8]><link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="icon" type="image/x-icon" href="/static/images/favico.png" />
+    <script type="text/javascript" src="/static/js/jquery/jquery-1.4.4.min.js"></script>
+    {% block extra_head %}{% endblock %}
+  </head>
+  {% block body %}
+  <body>
+    <div class="container">
+      <div class="header span-24 last">
+        {% block header %}{% endblock %}
+      </div>
+      <div class="main span-24 last">
+        {% block main %}{% endblock %}
+      </div>
+      <div class="footer span-24 last">
+        {% block footer %}{% endblock %}
+      </div>
+    </div>
+    {% block extra_scripts %}
+    <script type="text/javascript" type="/static/js/fullcalendar/fullcalendar.min.js"></script>
+    {% endblock %}
+  </body>
+  {% endblock %}
+</html>
