@@ -4,11 +4,6 @@
 */
 
 $(function() {
-  var today = new Date();
-  var d = today.getDate();
-  var m = today.getMonth();
-  var y = today.getFullYear();
-
   window.rvcal = { current: null };
 
   /* callback when user selectts day in calendar */
