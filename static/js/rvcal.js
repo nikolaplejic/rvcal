@@ -13,7 +13,6 @@ $(function() {
 
   /* callback when user selectts day in calendar */
   var _dayClickCallback = function(d, ad, jse, v) {
-    $("tbody > tr > .fc-state-default").css("background", "white");
     $(this).css("background", "#D1DCF9");
     $("#id_date").val(d);
     if ($("#entryform").css("display") == "none") {
