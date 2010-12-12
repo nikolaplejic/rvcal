@@ -6,10 +6,15 @@
 $(function() {
   window.rvcal = { current: null };
 
+  function _resetColors() {
+  	$(".fc-view > table > tbody > tr:nth-child(even) > td").not($(window.rvcal.current)).css("background", "#E5ECF9");
+  	$(".fc-view > table > tbody > tr:nth-child(odd) > td").not($(window.rvcal.current)).css("background", "#fff");
+  }
+
   /* callback when user selectts day in calendar */
   var _dayClickCallback = function(d, ad, jse, v) {
     $("tbody > tr > .fc-state-default").css("background", "white");
-    $(this).css("background", "#555");
+    $(this).css("background", "#D1DCF9");
     $("#id_date").val(d);
     if ($("#entryform").css("display") == "none") {
       window.rvcal.current = this;
@@ -22,6 +27,7 @@ $(function() {
         window.rvcal.current = this;
       }
     }
+    _resetColors();
   };
   
   /* sets hovering on days in calendar */
@@ -29,7 +35,7 @@ $(function() {
     $("tbody > tr > .fc-state-default").hover(function() {
       if (this != window.rvcal.current) {
         $(this).css({ 
-              "background": "#999", 
+              "background": "#D1DCF9", 
               "cursor": "pointer"
             });
       }
@@ -40,6 +46,7 @@ $(function() {
               "cursor": "pointer"
             });
       }
+      _resetColors();
      });
   };
 
