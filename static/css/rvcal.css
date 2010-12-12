@@ -32,7 +32,21 @@ h2 {
 }
 
 #entryform {
-  display: none; 
+  display: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#entryform select {
+  min-width: 100px;
+}
+
+#entryform input {
+  min-width: 150px;
+}
+
+#calendar {
+  border-top: 3px solid #333333;
 }
 
 .boxed {
