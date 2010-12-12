@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Shifts{% endblock %}
+{% block title %}Dežurstva u mami{% endblock %}
 {% block meta_description %}{{description_tag}}{% endblock %}
 {% block meta_keywords %}{{keywords_tag}}{% endblock %}
 
 {% block header %}
-<h1>Razmjena vještina dežurstva</h1>
+<div class="span-2">
+  <img src="/static/images/rv_logo.png"></img>
+</div>
+<div class="span-22 last">
+  <h1>
+    <span class="boxed">Razmjena vještina/Hacklab u mami dežurstva</span>
+  </h1>
+</div>
 {% endblock %}
 
 {% block main %}
@@ -20,5 +27,9 @@
 {% endblock %}
 
 {% block footer %}
-ovo je footer
+<span class="boxed">
+Razmjena vještina - 
+<a href="http://razmjenavjestina.org/">razmjenavjestina.org</a> -
+<a href="https://github.com/nikolaplejic/rvcal/">github.com/nikolaplejic/rvcal</a>
+</span>
 {% endblock %}
