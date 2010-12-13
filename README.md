@@ -6,10 +6,9 @@ small web app for management of hacklab in mama shifts
 Development
 -----------
 
-# in project dir
-mkdir db
-cd rvcal
-./manage.py syncdb
-./manage.py runserver
+        mkdir db
+        cd rvcal
+        ./manage.py syncdb
+        ./manage.py runserver
 
 --> localhost:8000/rvcal/index
