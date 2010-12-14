@@ -38,11 +38,21 @@ h2 {
 }
 
 #entryform select {
-  min-width: 100px;
+  min-width: 150px;
+  font-weight:bold;
 }
 
 #entryform input {
-  min-width: 150px;
+  width: 100px;
+  font-weight:bold;
+  border: none;
+}
+
+#entryform #submit {
+  width: 150px;
+  font-weight:bold;
+  border: none;
+  cursor: pointer;
 }
 
 #calendar {
