@@ -49,6 +49,12 @@ h2 {
   border-top: 3px solid #333333;
 }
 
+#calendar .fc-event-title {
+  text-decoration:none;
+  background-color: #333333;
+  color: #ffffff;
+}
+
 .boxed {
   background-color: #333333;
   color: #ffffff;
