@@ -1,9 +1,11 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.utils import simplejson
+from django.core.serializers.json import DjangoJSONEncoder
 from forms import ShiftForm
 from models import Shift
-import datetime
+from datetime import datetime
 
 # serves main page with calendar
 def index(request):
@@ -12,10 +14,12 @@ def index(request):
     form = ShiftForm(request.POST)
     context['form'] = form
     if form.is_valid():
-      shift = Shift(person=form.cleaned_data['person'],
-                    date=form.cleaned_data['date'])
+      shift = Shift(
+        person=form.cleaned_data['person'],
+        date=datetime.strptime(form.cleaned_data['date'], "%Y-%m-%d"))
       shift.save()
-      return HttpResponseRedirect('/')
+      return HttpResponseRedirect(
+        reverse(index))
   else:
     form = ShiftForm()
     context['form'] = form
@@ -30,5 +34,8 @@ def events(request):
   for shift in shifts:
     events.append(
       { 'title': shift.person.username,
-        'start': shift.date.isoformat() })
-  return HttpResponse(simplejson.dumps(events), mimetype="text/plain")
+        'start': shift.date,
+      })
+  return HttpResponse(
+    simplejson.dumps(events, cls=DjangoJSONEncoder),
+    mimetype="text/plain")

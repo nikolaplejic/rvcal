@@ -14,7 +14,9 @@ $(function() {
   /* callback when user selects day in calendar */
   var _dayClickCallback = function(d, ad, jse, v) {
     $(this).css("background", "#D1DCF9");
-    $("#id_date").val(d);
+    $("#id_date").val(
+      $.fullCalendar.formatDate(d, 'yyyy-MM-dd')
+    );
     if ($("#entryform").css("display") == "none") {
       window.rvcal.current = this;
       $("#entryform").slideDown();
