@@ -11,11 +11,12 @@ $(function() {
   	$(".fc-view > table > tbody > tr:nth-child(odd) > td").not($(window.rvcal.current)).css("background", "#fff");
   }
 
-  /* callback when user selectts day in calendar */
+  /* callback when user selects day in calendar */
   var _dayClickCallback = function(d, ad, jse, v) {
-    $("tbody > tr > .fc-state-default").css("background", "white");
     $(this).css("background", "#D1DCF9");
-    $("#id_date").val(d);
+    $("#id_date").val(
+      $.fullCalendar.formatDate(d, 'yyyy-MM-dd')
+    );
     if ($("#entryform").css("display") == "none") {
       window.rvcal.current = this;
       $("#entryform").slideDown();

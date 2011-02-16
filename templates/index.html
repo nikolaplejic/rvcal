@@ -6,11 +6,15 @@
 
 {% block header %}
 <div class="span-2">
-  <img src="/static/images/rv_logo.png"></img>
+  <a href="{% url shifts.views.index %}">
+    <img src="/static/images/rv_logo.png"></img>
+  </a>
 </div>
 <div class="span-22 last">
   <h1>
-    <span class="boxed">Razmjena vještina/Hacklab u mami dežurstva</span>
+    <a href="{% url shifts.views.index %}">
+      <span class="boxed">Razmjena vještina/Hacklab u mami dežurstva</span>
+    </a>
   </h1>
 </div>
 {% endblock %}
@@ -18,10 +22,14 @@
 {% block main %}
 <div id="entryform">
   <form method="post" action="{% url shifts.views.index %}">
+    {% if form.errors %}
+    <div class="error">{{form.errors}}</div>
+    {% endif %}
     Haker(ica) {{ form.person }} dežura dana {{ form.date }}?
     <input type="submit" value="Potvrdi" name="submit" id="submit" />
   </form>
 </div>
+
 <div id="calendar"></div>
 {% endblock %}
 
