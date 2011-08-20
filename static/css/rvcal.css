@@ -70,3 +70,9 @@ h2 {
   color: #ffffff;
   padding: 5px;
 }
+
+#loginform form label { 
+  float: left;
+  padding-top: 7px;
+  width: 120px;
+}

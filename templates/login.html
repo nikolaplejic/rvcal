@@ -22,8 +22,8 @@
 {% block main %}
 <div id="loginform">
   <form method="post" action="{% url shifts.views.user_login %}">
-    <input type="text" name="username" id="username" size="30" /><br />
-    <input type="password" name="password" id="password" size="30" /><br />
+    <label for="username">Username:</label> <input type="text" name="username" id="username" size="30" /><br />
+    <label for="password">Password:</label> <input type="password" name="password" id="password" size="30" /><br />
     <input type="submit" value="submit" id="submit" />
   </form>
 </div>
