@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Dežurstva u mami{% endblock %}
+{% block meta_description %}{{description_tag}}{% endblock %}
+{% block meta_keywords %}{{keywords_tag}}{% endblock %}
+
+{% block header %}
+<div class="span-2">
+  <a href="{% url shifts.views.index %}">
+    <img src="/static/images/rv_logo.png"></img>
+  </a>
+</div>
+<div class="span-22 last">
+  <h1>
+    <a href="{% url shifts.views.index %}">
+      <span class="boxed">Razmjena vještina/Hacklab u mami dežurstva</span>
+    </a>
+  </h1>
+</div>
+{% endblock %}
+
+{% block main %}
+<div id="loginform">
+  <form method="post" action="{% url shifts.views.user_login %}">
+    <input type="text" name="username" id="username" size="30" /><br />
+    <input type="password" name="password" id="password" size="30" /><br />
+    <input type="submit" value="submit" id="submit" />
+  </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+<span class="boxed">
+Razmjena vještina - 
+<a href="http://razmjenavjestina.org/">razmjenavjestina.org</a> -
+<a href="https://github.com/nikolaplejic/rvcal/">github.com/nikolaplejic/rvcal</a>
+</span>
+{% endblock %}
