@@ -27,6 +27,10 @@ def user_login(request):
     template = 'login.html'
     return render_to_response(template, context)
 
+def user_logout(request):
+  logout(request)
+  return HttpResponseRedirect(reverse(user_login))
+
 # serves main page with calendar
 def index(request):
   if not request.user.is_authenticated():
