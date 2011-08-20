@@ -7,3 +7,7 @@ class ShiftForm(forms.Form):
                                  empty_label=None)
   date = forms.CharField(label='Datum',
                          widget=forms.TextInput(attrs={ 'readonly': 'readonly' }))
+
+class LoginForm(forms.Form):
+  username = forms.CharField(label='Username', widget=forms.TextInput(attrs={}))
+  password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={}))

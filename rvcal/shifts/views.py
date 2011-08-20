@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.utils import simplejson
 from django.core.serializers.json import DjangoJSONEncoder
 from django.contrib.auth import authenticate, login, logout
-from forms import ShiftForm
+from forms import ShiftForm, LoginForm
 from models import Shift
 from datetime import datetime
 
@@ -14,8 +14,9 @@ def user_login(request):
   if request.method == 'POST':
     username = request.POST['username']
     password = request.POST['password']
+    form = LoginForm(request.POST)
     user = authenticate(username=username, password=password)
-    if user is not None:
+    if user is not None and form.is_valid():
       if user.is_active:
         login(request, user)
         return HttpResponseRedirect(reverse(index))
@@ -25,6 +26,8 @@ def user_login(request):
       return HttpResponseRedirect(reverse(user_login))
   else:
     template = 'login.html'
+    form = LoginForm()
+    context['form'] = form
     return render_to_response(template, context)
 
 def user_logout(request):
