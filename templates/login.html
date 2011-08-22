@@ -20,9 +20,9 @@
 {% endblock %}
 
 {% block main %}
-<div id="loginform">
+<div id="loginform" style="width: 430px; margin: 0 auto;">
   <form method="post" action="{% url shifts.views.user_login %}">
-    <label for="username">Username:</label> <input type="text" name="username" id="username" size="30" /><br />
+    <label for="username">Username:</label> <input type="text" name="username" id="username" size="30" />@bljak.org<br />
     <label for="password">Password:</label> <input type="password" name="password" id="password" size="30" /><br />
     <input type="submit" value="submit" id="submit" />
   </form>
