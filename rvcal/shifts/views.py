@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from django.utils import simplejson
 from django.core.serializers.json import DjangoJSONEncoder
 from django.contrib.auth import authenticate, login, logout
+from django.template import RequestContext
 from forms import ShiftForm, LoginForm
 from models import Shift
 from datetime import datetime
@@ -56,7 +57,7 @@ def index(request):
     context['form'] = form
 
   template = 'index.html'
-  return render_to_response(template, context)
+  return render_to_response(template, context_instance=RequestContext(request, context))
 
 # returns list of events for calendar
 def events(request):
