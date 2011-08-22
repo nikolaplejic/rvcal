@@ -16,12 +16,9 @@ def user_login(request):
     password = request.POST['password']
     form = LoginForm(request.POST)
     user = authenticate(username=username, password=password)
-    if user is not None and form.is_valid():
-      if user.is_active:
-        login(request, user)
-        return HttpResponseRedirect(reverse(index))
-      else:
-        return HttpResponseRedirect(reverse(user_login))
+    if user is not None and user.is_active and form.is_valid():
+      login(request, user)
+      return HttpResponseRedirect(reverse(index))
     else:
       return HttpResponseRedirect(reverse(user_login))
   else:
