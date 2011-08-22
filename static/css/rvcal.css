@@ -43,7 +43,7 @@ h2 {
 }
 
 #entryform input {
-  width: 100px;
+  /*width: 100px;*/
   font-weight:bold;
   border: none;
 }
