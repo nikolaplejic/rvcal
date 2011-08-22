@@ -63,6 +63,7 @@ $(function() {
    eventSources: [
     '/rvcal/events/'
    ],
-   height: 300
+   height: 300, 
+   firstDay: 1
   });
 });
