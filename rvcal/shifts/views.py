@@ -44,6 +44,10 @@ def index(request):
     form = ShiftForm(request.POST)
     context['form'] = form
     if form.is_valid():
+      if form.cleaned_data['clear']:
+        Shift.objects.filter(date=datetime.strptime(form.cleaned_data['date'],
+                             "%Y-%m-%d")).delete()
+
       shift = Shift(
         person=form.cleaned_data['person'],
         date=datetime.strptime(form.cleaned_data['date'], "%Y-%m-%d"))

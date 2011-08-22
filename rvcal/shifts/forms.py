@@ -7,6 +7,7 @@ class ShiftForm(forms.Form):
                                  empty_label=None)
   date = forms.CharField(label='Datum',
                          widget=forms.TextInput(attrs={ 'readonly': 'readonly' }))
+  clear = forms.BooleanField(label='Obriši do sada unesena dežurstva za ovaj dan', required=False)
 
 class LoginForm(forms.Form):
   username = forms.CharField(label='Username', widget=forms.TextInput(attrs={}))

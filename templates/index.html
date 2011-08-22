@@ -25,7 +25,8 @@
     {% if form.errors %}
     <div class="error">{{form.errors}}</div>
     {% endif %}
-    Haker(ica) {{ form.person }} dežura dana {{ form.date }}?
+    Haker(ica) {{ form.person }} dežura dana {{ form.date }}?<br />
+    {{ form.clear }} <label for="id_clear">{{ form.clear.label }}</label><br />
     <input type="submit" value="Potvrdi" name="submit" id="submit" />
   </form>
 </div>
