@@ -51,7 +51,7 @@ def index(request):
       return HttpResponseRedirect(
         reverse(index))
   else:
-    form = ShiftForm()
+    form = ShiftForm(initial={ "person": request.user.id })
     context['form'] = form
 
   template = 'index.html'
