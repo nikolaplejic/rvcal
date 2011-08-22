@@ -18,6 +18,7 @@
     <div class="container">
       <div class="header span-24 last">
         {% block header %}{% endblock %}
+        <a href="{% url shifts.views.user_logout %}">logout</a>
       </div>
       <div class="main span-24 last">
         {% block main %}{% endblock %}
