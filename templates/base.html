@@ -18,7 +18,7 @@
     <div class="container">
       <div class="header span-24 last">
         {% block header %}{% endblock %}
-        {% if user.is_authenticated %}<a href="{% url shifts.views.user_logout %}">logout</a>{% endif %}
+        {% if user.is_authenticated %}<a href="{% url shifts.views.user_logout %}">logout ({{ user.username }})</a>{% endif %}
       </div>
       <div class="main span-24 last">
         {% block main %}{% endblock %}
